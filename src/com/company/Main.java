@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         CrudRepository companyRepo = new CompanyInFileRepo("D:\\University\\Info\\materii\\MAP\\ExamenLab2\\src\\com\\company\\RepoData\\offerten.txt");
 
-        CrudRepository repo = new CompanyInFileRepo().writeToFile("D:\\University\\Info\\materii\\MAP\\ExamenLab2\\src\\com\\company\\RepoData\\offertensorientiert.txt", CompanyList);
+        ((CompanyInFileRepo) companyRepo).writeToFile("D:\\University\\Info\\materii\\MAP\\ExamenLab2\\src\\com\\company\\RepoData\\offertensorientiert.txt", CompanyList);
 
         CompanyController companyController = new CompanyController(companyRepo);
         MainController mainController = new MainController(companyController);
