@@ -2,11 +2,9 @@ package com.company.Controller;
 
 import com.company.Repository.CrudRepository;
 import com.company.domain.Company;
+import com.company.domain.Place;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CompanyController {
@@ -42,5 +40,23 @@ public class CompanyController {
 
         return companyList.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
+
+    /**
+     *
+     * @return a map cu frecventa si orasul
+     * @throws Exception
+     * nu am mai apucat sa fac
+     */
+    public String getTopPlace() throws Exception {
+        List<Company> companyList = (List<Company>) this.repository.findAll();
+
+        Map.Entry<Place, Integer> topPlace = companyList.stream().sorted(Comparator.comparing())
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .orElseThrow(NullPointerException::new);
+
+        return topPlace.getKey() + ":" + topPlace.getValue();
+    }
+
 
 }
