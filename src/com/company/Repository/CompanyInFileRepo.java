@@ -18,6 +18,12 @@ public class CompanyInFileRepo implements CrudRepository<Company>{
         this.fileName = fileName;
     }
 
+    /**
+     *
+     * @param id -the id of the entity to be returned id must not be null
+     * @return a list of id
+     * @throws Exception
+     */
     public Company findOne(Long id) throws Exception {
         List<Company> companyList = new ArrayList<>();
         this.findAll().forEach(companyList::add);

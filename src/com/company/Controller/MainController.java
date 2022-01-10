@@ -10,7 +10,11 @@ public class MainController {
         this.companyController = companyController;
     }
 
-
+    /**
+     *
+     * @return company sorted by price
+     * @throws Exception
+     */
     public Iterable<Company> getSortedCompany() throws Exception {
         return this.companyController.getSortedCompany();
     }
