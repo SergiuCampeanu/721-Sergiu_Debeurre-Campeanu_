@@ -36,7 +36,7 @@ public class RegistrationSystem {
     /**
      * run the methode of each case
      */
-    private void startConsole(){
+    private void startConsole() throws Exception {
         Scanner scanner = new Scanner(System.in);
         while (true){
             String opt = scanner.nextLine();

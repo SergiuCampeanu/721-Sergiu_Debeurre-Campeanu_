@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-public class CompanyInFileRepo {
+public class CompanyInFileRepo implements CrudRepository<Company>{
 
     private String fileName;
 

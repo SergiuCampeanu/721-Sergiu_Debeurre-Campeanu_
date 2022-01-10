@@ -25,7 +25,7 @@ public class CompanyController {
         }
     }
 
-    public List<Company> getSortedCompany(){
+    public List<Company> getSortedCompany() throws Exception {
         List<Company> companyList = (List<Company>) this.repository.findAll();
         return companyList.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }

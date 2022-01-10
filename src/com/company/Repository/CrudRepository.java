@@ -14,13 +14,13 @@ public interface CrudRepository<E> {
     /**
      * @return all entities
      */
-    Iterable<E> findAll();
+    Iterable<E> findAll() throws Exception;
 
     /**
      * @param entity entity must be not null
      * @return null- if the given entity is saved otherwise returns the entity (id already exists)
      */
-    E save(E entity);
+    E save(E entity) throws Exception;
 
 }
 
