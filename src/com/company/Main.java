@@ -1,8 +1,18 @@
 package com.company;
 
+import com.company.Controller.MainController;
+import com.company.Repository.CompanyInFileRepo;
+import com.company.Repository.CrudRepository;
+import com.company.domain.Company;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        CrudRepository<Company> CompanyRepo = (CrudRepository<Company>) new CompanyInFileRepo("D:\\University\\Info\\materii\\MAP\\ExamenLab2\\src\\com\\company\\RepoData\\offerten.txt");
+
+        MainController mainController = new MainController(courseController, studentController, teacherController);
+
+        RegistrationSystem registrationSystem = new RegistrationSystem(mainController);
+        registrationSystem.startApplication();
     }
 }
