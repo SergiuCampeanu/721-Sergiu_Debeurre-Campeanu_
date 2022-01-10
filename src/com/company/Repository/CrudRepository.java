@@ -1,6 +1,10 @@
 
 package com.company.Repository;
 
+import com.company.domain.Company;
+
+import java.util.List;
+
 /**
  * @author sncam
  */
