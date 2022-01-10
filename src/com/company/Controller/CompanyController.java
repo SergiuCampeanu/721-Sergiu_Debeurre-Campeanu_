@@ -3,7 +3,10 @@ package com.company.Controller;
 import com.company.Repository.CrudRepository;
 import com.company.domain.Company;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CompanyController {
 
@@ -13,12 +16,6 @@ public class CompanyController {
         this.repository = companyRepo;
     }
 
-
-    /**
-     *
-     * @param companyId id of the student
-     * @return the student with the same id
-     */
     public Company findStudentById(Long companyId) throws Exception {
         try{
             return this.repository.findOne(companyId);
@@ -28,14 +25,9 @@ public class CompanyController {
         }
     }
 
-    /**
-     *
-     * @param maxCredit maximum number of credits that a student can have
-     * @return the filtered list of student
-     */
-    public List<Company> getFilteredCompany(int maxCredit){
+    public List<Company> getFilteredCompany(){
         List<Company> companyList = (List<Company>) this.repository.findAll();
-        return companyList.stream().filter(s1->s1.getTotalCredit()<maxCredit).toList();
+        return companyList.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
 
 }
