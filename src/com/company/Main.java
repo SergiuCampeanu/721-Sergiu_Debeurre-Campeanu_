@@ -8,7 +8,7 @@ import com.company.view.RegistrationSystem;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         CrudRepository companyRepo = new CompanyInFileRepo("D:\\University\\Info\\materii\\MAP\\ExamenLab2\\src\\com\\company\\RepoData\\offerten.txt");
 
         CompanyController companyController = new CompanyController(companyRepo);

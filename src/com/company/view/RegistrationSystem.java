@@ -15,7 +15,7 @@ public class RegistrationSystem {
         this.mainController = mainController;
     }
 
-    public void startApplication(){
+    public void startApplication() throws Exception {
         this.showMenu();
         this.startConsole();
     }
