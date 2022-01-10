@@ -72,10 +72,10 @@ public class CompanyInFileRepo implements CrudRepository<Company>{
         return entity;
     }
 
-    public void writeToFile(String fileName, List<Company> liste, String character) throws IOException {
+    public void writeToFile(String fileName, List<Company> liste) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
         for (Company company : liste) {
-            String line = company.getId() + character + company.getName() + character + company.getPrice() + character + company.getProcent() + character + company.getAddress() + character + company.getPlace();
+            String line = company.getId() + "&" + company.getName() + "&" + company.getPrice() + "&" + company.getProcent() + "&" + company.getAddress() + "&" + company.getPlace();
             bufferedWriter.write(line);
             bufferedWriter.newLine();
         }
