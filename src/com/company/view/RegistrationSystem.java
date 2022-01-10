@@ -27,7 +27,8 @@ public class RegistrationSystem {
     private void showMenu(){
         StringBuilder builder = new StringBuilder();
         builder.append("Welcome to the Company's Application\n")
-                .append("Press: 1 for get filtered courses by credits max\n")
+                .append("Press: 1 for get sorted company by price\n")
+                .append("Press: 2 for getting top city\n")
                 .append("Press: 0 to exit application\n")
                 .append("Your choice: ");
         System.out.println(builder.toString());
@@ -43,9 +44,14 @@ public class RegistrationSystem {
 
             switch (opt) {
 
-                case "7":
+                case "1":
                     Iterable<Company> getSortedCompanyList = this.mainController.getSortedCompany();
                     System.out.println("all the a company filtered by price: " + getSortedCompanyList + "\n");
+                    break;
+
+                case "2":
+                    String getTopCity = this.mainController.getTopPlace();
+                    System.out.println("Top city: " + getTopCity + "\n");
                     break;
 
                 case "0":

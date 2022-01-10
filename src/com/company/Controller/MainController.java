@@ -1,6 +1,5 @@
 package com.company.Controller;
 
-import com.company.Repository.CompanyInFileRepo;
 import com.company.domain.Company;
 
 public class MainController {
@@ -17,5 +16,9 @@ public class MainController {
      */
     public Iterable<Company> getSortedCompany() throws Exception {
         return this.companyController.getSortedCompany();
+    }
+
+    public String getTopPlace() throws Exception {
+        return this.companyController.getTopPlace();
     }
 }
