@@ -16,7 +16,7 @@ public class CompanyController {
         this.repository = companyRepo;
     }
 
-    public Company findStudentById(Long companyId) throws Exception {
+    public Company findCompanyById(Long companyId) throws Exception {
         try{
             return this.repository.findOne(companyId);
         }
@@ -25,7 +25,7 @@ public class CompanyController {
         }
     }
 
-    public List<Company> getFilteredCompany(){
+    public List<Company> getSortedCompany(){
         List<Company> companyList = (List<Company>) this.repository.findAll();
         return companyList.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
